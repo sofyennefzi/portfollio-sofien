@@ -36,6 +36,10 @@ import certSaylorEnglish from "@/assets/certs/image-13.png.asset.json";
 import certMetaSocial from "@/assets/certs/image-14.png.asset.json";
 import certMetaReact from "@/assets/certs/image-15.png.asset.json";
 import certIbmPyDs2 from "@/assets/certs/image-16.png.asset.json";
+import certMichiganPhp from "@/assets/certs/image-17.png.asset.json";
+import certSpringMvc from "@/assets/certs/image-18.png.asset.json";
+import certYanfaEnglish from "@/assets/certs/image-19.png.asset.json";
+import certEfsetB2 from "@/assets/certs/image-20.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -134,6 +138,10 @@ const certifications = [
   { title: "Innovation & Entrepreneurship", issuer: "EIT Digital", date: "Nov 2025", image: certEit.url },
   { title: "Leadership Skills", issuer: "IIM Ahmedabad", date: "Oct 2023", image: certIimaLeadership.url },
   { title: "Social Media Management", issuer: "Meta", date: "Aug 2023", image: certMetaSocial.url },
+  { title: "Building Web Applications in PHP", issuer: "University of Michigan", date: "Mar 2019", image: certMichiganPhp.url },
+  { title: "Spring MVC, Spring Boot and REST Controllers", issuer: "LearnQuest", date: "Aug 2024", image: certSpringMvc.url },
+  { title: "EF SET English Certificate — B2 Upper Intermediate", issuer: "EF SET", date: "Nov 2024", image: certEfsetB2.url },
+  { title: "English Language — Level 3", issuer: "Yanfa3", date: "Feb 2025", image: certYanfaEnglish.url },
   { title: "Elementary English as a Second Language", issuer: "Saylor Academy", date: "Dec 2022", image: certSaylorEnglish.url },
 ];
 
