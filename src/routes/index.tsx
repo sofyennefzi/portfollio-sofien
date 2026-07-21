@@ -306,7 +306,6 @@ function Index() {
         <AboutSection />
         <NationalEntrepreneurSection />
         <SkillsSection />
-        <AgencyProjectsSection />
         <ProjectsSection />
         <ContactSection />
       </main>
