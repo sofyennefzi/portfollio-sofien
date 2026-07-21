@@ -738,7 +738,7 @@ function AboutSection() {
   return (
     <section id="about" className="border-t border-border bg-card/30 py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="eyebrow justify-center">
           Get To Know More
         </p>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -920,7 +920,7 @@ function SkillsSection() {
   return (
     <section id="skills" className="py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="eyebrow justify-center">
           Explore My
         </p>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -1050,7 +1050,7 @@ function ProjectsSection() {
   return (
     <section id="projects" className="border-t border-border bg-card/30 py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="eyebrow justify-center">
           Browse My Recent
         </p>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -1061,7 +1061,7 @@ function ProjectsSection() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md"
+              className="card-glow group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
             >
               <div className="aspect-video overflow-hidden bg-muted">
                 <img
