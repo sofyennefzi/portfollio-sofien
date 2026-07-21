@@ -16,6 +16,7 @@ import {
   Shield,
   Layers,
   Bot,
+  Award,
 } from "lucide-react";
 
 import cvAsset from "@/assets/sofien-nefzi-cv.pdf.asset.json";
@@ -40,6 +41,7 @@ import certMichiganPhp from "@/assets/certs/image-17.png.asset.json";
 import certSpringMvc from "@/assets/certs/image-18.png.asset.json";
 import certYanfaEnglish from "@/assets/certs/image-19.png.asset.json";
 import certEfsetB2 from "@/assets/certs/image-20.png.asset.json";
+import nationalEntrepreneur from "@/assets/certs/national-entrepreneur.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
