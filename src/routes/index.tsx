@@ -573,13 +573,28 @@ function Index() {
       <Navigation />
       <main>
         <HeroSection />
+        <SectionOrnament />
         <AboutSection />
+        <SectionOrnament />
         <NationalEntrepreneurSection />
+        <SectionOrnament />
         <SkillsSection />
+        <SectionOrnament />
         <ProjectsSection />
+        <SectionOrnament />
         <ContactSection />
       </main>
       <Footer />
+    </div>
+  );
+}
+
+function SectionOrnament() {
+  return (
+    <div className="mx-auto max-w-5xl px-6" aria-hidden="true">
+      <div className="section-ornament">
+        <span />
+      </div>
     </div>
   );
 }
