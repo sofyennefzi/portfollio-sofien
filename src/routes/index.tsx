@@ -345,12 +345,14 @@ function AboutSection() {
               thinking helps me analyze situations effectively, and I
               consistently meet deadlines to deliver quality results on time.
             </p>
-            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              <img
-                src={aboutPicture}
-                alt="Sofyen Nefzi"
-                className="h-48 w-full object-cover object-center"
-              />
+            <div className="flex justify-center">
+              <div className="aspect-square w-56 overflow-hidden rounded-full border-4 border-border bg-card shadow-md">
+                <img
+                  src={aboutPicture}
+                  alt="Sofyen Nefzi"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
