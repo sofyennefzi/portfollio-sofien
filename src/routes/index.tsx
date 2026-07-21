@@ -36,6 +36,10 @@ import certSaylorEnglish from "@/assets/certs/image-13.png.asset.json";
 import certMetaSocial from "@/assets/certs/image-14.png.asset.json";
 import certMetaReact from "@/assets/certs/image-15.png.asset.json";
 import certIbmPyDs2 from "@/assets/certs/image-16.png.asset.json";
+import certMichiganPhp from "@/assets/certs/image-17.png.asset.json";
+import certSpringMvc from "@/assets/certs/image-18.png.asset.json";
+import certYanfaEnglish from "@/assets/certs/image-19.png.asset.json";
+import certEfsetB2 from "@/assets/certs/image-20.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
