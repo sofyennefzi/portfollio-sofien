@@ -531,37 +531,22 @@ function SkillsSection() {
           </div>
 
           <div
-            className="group/marquee relative mt-6 overflow-hidden"
+            className="group/marquee relative mt-6 flex flex-col gap-4 overflow-hidden"
             style={{
               maskImage:
-                "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
               WebkitMaskImage:
-                "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
             }}
           >
-            <div className="flex w-max animate-[marquee_40s_linear_infinite] gap-3 group-hover/marquee:[animation-play-state:paused]">
-              {[...certifications, ...certifications].map((cert, i) => (
-                <figure
-                  key={`${cert.title}-${i}`}
-                  className="group/card relative w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-                >
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
-                    <img
-                      src={cert.image}
-                      alt={cert.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-500 group-hover/card:scale-105"
-                    />
-                  </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-background/95 via-background/85 to-transparent p-2 transition-transform duration-300 group-hover/card:translate-y-0">
-                    <p className="text-[10px] font-semibold leading-tight text-foreground line-clamp-2">
-                      {cert.title}
-                    </p>
-                    <p className="mt-0.5 text-[9px] text-muted-foreground">
-                      {cert.issuer} · {cert.date}
-                    </p>
-                  </figcaption>
-                </figure>
+            <div className="flex w-max animate-[marquee_50s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
+              {[...certRow1, ...certRow1].map((cert, i) => (
+                <CertCard key={`${cert.title}-${i}`} cert={cert} />
+              ))}
+            </div>
+            <div className="flex w-max animate-[marquee-reverse_50s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
+              {[...certRow2, ...certRow2].map((cert, i) => (
+                <CertCard key={`${cert.title}-r2-${i}`} cert={cert} />
               ))}
             </div>
           </div>
