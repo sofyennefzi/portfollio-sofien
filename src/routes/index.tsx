@@ -1096,23 +1096,23 @@ function getProjectCategory(p: (typeof projects)[number]): Exclude<ProjectCatego
 }
 
 function ProjectsSection() {
-  const [active, setActive] = useState<ProjectCategory>("All");
-
   const categorized = useMemo(
     () => projects.map((p) => ({ ...p, category: getProjectCategory(p) })),
     [],
   );
 
-  const counts = useMemo(() => {
-    const c: Record<string, number> = { All: categorized.length };
-    for (const p of categorized) c[p.category] = (c[p.category] ?? 0) + 1;
-    return c;
+  const groups = useMemo(() => {
+    const order = PROJECT_CATEGORIES.filter((c) => c !== "All") as Exclude<
+      ProjectCategory,
+      "All"
+    >[];
+    return order
+      .map((cat) => ({
+        category: cat,
+        items: categorized.filter((p) => p.category === cat),
+      }))
+      .filter((g) => g.items.length > 0);
   }, [categorized]);
-
-  const filtered =
-    active === "All"
-      ? categorized
-      : categorized.filter((p) => p.category === active);
 
   return (
     <section id="projects" className="border-t border-border bg-card/30 py-20">
@@ -1122,103 +1122,81 @@ function ProjectsSection() {
           Projects
         </h2>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          {PROJECT_CATEGORIES.map((cat) => {
-            const isActive = active === cat;
-            const count = counts[cat] ?? 0;
-            if (count === 0) return null;
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActive(cat)}
-                aria-pressed={isActive}
-                className={
-                  "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all " +
-                  (isActive
-                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                    : "border-border bg-card text-muted-foreground hover:border-foreground/40 hover:text-foreground")
-                }
-              >
-                {cat}
-                <span
-                  className={
-                    "rounded-full px-1.5 py-0.5 text-[10px] font-semibold " +
-                    (isActive
-                      ? "bg-primary-foreground/15 text-primary-foreground"
-                      : "bg-secondary text-secondary-foreground")
-                  }
-                >
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-
-        {filtered.length === 0 ? (
-          <p className="mt-16 text-center text-sm text-muted-foreground">
-            No projects in this category yet.
-          </p>
-        ) : (
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((project) => (
-              <article
-                key={project.title}
-                className="card-glow group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
-              >
-                <div className="relative aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-foreground shadow-sm backdrop-blur-sm">
-                    {project.category}
+        <div className="mt-16 space-y-20">
+          {groups.map((group, idx) => (
+            <div key={group.category} id={`projects-${group.category.toLowerCase().replace(/\s|&/g, "-")}`}>
+              <div className="mb-8 flex items-end justify-between gap-4 border-b border-border pb-4">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    {String(idx + 1).padStart(2, "0")}
                   </span>
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {project.title}
+                  <h3 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                    {group.category}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {project.description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-5 flex gap-3">
-                    {project.links.github && (
-                      <ProjectLink
-                        href={project.links.github}
-                        icon={Github}
-                        label="GitHub"
-                      />
-                    )}
-                    {project.links.live && (
-                      <ProjectLink
-                        href={project.links.live}
-                        icon={ExternalLink}
-                        label="Live Demo"
-                      />
-                    )}
-                  </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        )}
+                <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                  {group.items.length} project{group.items.length > 1 ? "s" : ""}
+                </span>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((project) => (
+                  <article
+                    key={project.title}
+                    className="card-glow group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+                  >
+                    <div className="relative aspect-video overflow-hidden bg-muted">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-5">
+                      <h4 className="text-lg font-semibold text-foreground">
+                        {project.title}
+                      </h4>
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                        {project.description}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="mt-5 flex gap-3">
+                        {project.links.github && (
+                          <ProjectLink
+                            href={project.links.github}
+                            icon={Github}
+                            label="GitHub"
+                          />
+                        )}
+                        {project.links.live && (
+                          <ProjectLink
+                            href={project.links.live}
+                            icon={ExternalLink}
+                            label="Live Demo"
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
 
 function ProjectLink({
   href,
