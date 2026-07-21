@@ -26,6 +26,16 @@ import certGoogle from "@/assets/certs/image-3.png.asset.json";
 import certAzure from "@/assets/certs/image-4.png.asset.json";
 import certSpring from "@/assets/certs/image-5.png.asset.json";
 import certPython from "@/assets/certs/image-6.png.asset.json";
+import certGooglePyOs from "@/assets/certs/image-7.png.asset.json";
+import certIbmPyDs from "@/assets/certs/image-8.png.asset.json";
+import certJhuWeb from "@/assets/certs/image-9.png.asset.json";
+import certIimaLeadership from "@/assets/certs/image-10.png.asset.json";
+import certLinkedInPy from "@/assets/certs/image-11.png.asset.json";
+import certBoardAngular from "@/assets/certs/image-12.png.asset.json";
+import certSaylorEnglish from "@/assets/certs/image-13.png.asset.json";
+import certMetaSocial from "@/assets/certs/image-14.png.asset.json";
+import certMetaReact from "@/assets/certs/image-15.png.asset.json";
+import certIbmPyDs2 from "@/assets/certs/image-16.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
