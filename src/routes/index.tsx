@@ -58,7 +58,7 @@ import projTelegramAi from "@/assets/projects/telegram-ai.png.asset.json";
 import projAuraStore from "@/assets/projects/aura-store.png.asset.json";
 import projLifeManager from "@/assets/projects/life-manager.png.asset.json";
 import projChatDb from "@/assets/projects/chat-db.png.asset.json";
-import projGmailOpenai from "@/assets/projects/gmail-openai.png.asset.json";
+
 import projMobileLogin from "@/assets/projects/mobile-login.png.asset.json";
 import projEmailSupport from "@/assets/projects/email-support.png.asset.json";
 import projEcomArabic from "@/assets/projects/ecom-arabic.png.asset.json";
@@ -428,14 +428,6 @@ const projects: {
       "Natural-language interface that lets non-technical users query a SQL database in plain English. AI translates the question into SQL, runs it safely and returns formatted answers.",
     image: projChatDb.url,
     tags: ["n8n", "OpenAI", "SQL", "LangChain"],
-    links: {},
-  },
-  {
-    title: "Gmail Auto-Labeling with OpenAI",
-    description:
-      "Lightweight Gmail automation that reads new messages, asks an LLM to pick the right label, and either applies an existing label or creates a new one on the fly.",
-    image: projGmailOpenai.url,
-    tags: ["n8n", "OpenAI", "Gmail API"],
     links: {},
   },
   {
