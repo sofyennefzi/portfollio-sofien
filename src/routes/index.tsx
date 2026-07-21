@@ -152,68 +152,67 @@ const certRow2 = certifications.slice(10);
 
 const projects = [
   {
-    title: "CNSS Data Management Platform",
+    title: "ESEN Joker Club",
     description:
-      "Secure full-stack web application for internal data management and automation at CNSS Tunisia. Features an API middleware that auto-extracts and populates databases.",
-    image: "https://sofiennefzi.me/interface%20API.png",
-    tags: ["Spring Boot", "Angular", "JWT", "REST APIs", "Bootstrap"],
+      "Designed and developed the official website for our university's Joker Club. Features include event calendars, member profiles, and photo galleries. Implemented responsive design for all devices and optimized loading times.",
+    image: "https://sofiennefzi.me/joker.jpg",
+    tags: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
     links: {},
   },
   {
-    title: "Clinic Management System",
+    title: "Hotel Booking",
     description:
-      "Full-stack clinic platform for dental and medical practices with appointment scheduling, patient management, payment tracking, and analytics dashboards.",
-    image: "https://sofiennefzi.me/care/agenda.jpg",
-    tags: [
-      "Python",
-      "FastAPI",
-      "MySQL",
-      "Bootstrap 5",
-      "Chart.js",
-      "FullCalendar",
-    ],
+      "A comprehensive hotel management system with room booking functionality, admin dashboard, and payment integration. Developed as my final year project with secure user authentication and database management.",
+    image: "https://sofiennefzi.me/hotel.jpg",
+    tags: ["PHP", "MySQL", "JavaScript", "jQuery"],
     links: {},
   },
   {
-    title: "AI Agent Web Scraping",
+    title: "Gourmet Restaurant",
     description:
-      "Intelligent automation system that understands natural-language commands and scrapes business data from Google Maps, Yellow Pages, Apollo, and social platforms.",
-    image: "https://sofiennefzi.me/n8n20%20(1).jpg",
-    tags: ["n8n", "OpenAI", "Apify", "Google Sheets API", "REST APIs"],
+      "Modern restaurant website with online reservation system, interactive menu, and food gallery. Focused on creating an elegant UI with smooth animations and intuitive navigation for the best user experience.",
+    image: "https://sofiennefzi.me/resto.jpg",
+    tags: ["React", "CSS Modules", "Node.js"],
     links: {},
   },
   {
-    title: "AI-Powered Job Application System",
+    title: "YouTube Downloader",
     description:
-      "End-to-end automated workflow that finds jobs, scores fit, writes custom cover letters, and logs everything for one-click outreach.",
-    image: "https://sofiennefzi.me/n8n%20jobs/workflow.jpg",
-    tags: ["n8n", "Apify", "OpenAI GPT-4", "Google Sheets", "HTTP APIs"],
+      "Desktop application that downloads YouTube videos in multiple formats and resolutions. Includes progress tracking, playlist support, and quality selection options.",
+    image: "https://sofiennefzi.me/yt.jpg",
+    tags: ["Python", "Tkinter", "Pytube"],
     links: {},
   },
   {
-    title: "Restaurant Analytics Chatbot",
+    title: "Ping Pong",
     description:
-      "Production-ready Flask app that lets restaurant owners ask natural-language questions about revenue, margins, and menu performance, returning instant insights.",
-    image: "https://sofiennefzi.me/chat-interface.jpg",
-    tags: [
-      "Python",
-      "Flask",
-      "LangChain",
-      "GPT-4o-mini",
-      "MySQL",
-      "Chart.js",
-    ],
-    links: {
-      github: "https://github.com/sofyennefzi/chatbot",
-      live: "https://sofiennefzi.me/",
-    },
+      "A retro-style ping pong game with score tracking, difficulty levels, and multiplayer support. Built to understand game physics and real-time user input handling.",
+    image: "https://sofiennefzi.me/ping%20pong.jpg",
+    tags: ["Python", "Turtle", "Game Dev"],
+    links: {},
+  },
+  {
+    title: "Tic Tac Toe",
+    description:
+      "Classic Tic Tac Toe with adjustable AI difficulty. Features include score history, player vs player mode, and responsive design that works on both desktop and mobile devices.",
+    image: "https://sofiennefzi.me/XO.jpg",
+    tags: ["JavaScript", "Minimax Algorithm", "Responsive Design"],
+    links: {},
   },
   {
     title: "Task Flow",
     description:
-      "Full-stack productivity application with user authentication, project management, task tracking, and a responsive dashboard with productivity insights.",
+      "Full-stack productivity application with user authentication, project management, and task tracking. Features a responsive dashboard with productivity insights, priority-based task organization, and intuitive project categorization for seamless workflow management.",
     image: "https://sofiennefzi.me/task.jpg",
     tags: ["Spring Boot", "Angular", "MySQL", "JWT", "TypeScript"],
+    links: {},
+  },
+  {
+    title: "Job Search Automator",
+    description:
+      "Intelligent automation system that streamlines job hunting by scraping relevant positions, analyzing job-description fit with AI, generating personalized cover letters, and organizing opportunities in a centralized dashboard.",
+    image: "https://sofiennefzi.me/n8n.jpg",
+    tags: ["n8n", "AI Integration", "Web Scraping", "Google Sheets API", "Prompt Engineering"],
     links: {},
   },
 ];
