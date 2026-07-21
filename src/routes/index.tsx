@@ -552,21 +552,23 @@ function NationalEntrepreneurSection() {
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {agencyProjects.map((project) => (
-            <a
+            <article
               key={project.title}
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <figure className="w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="block overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+              >
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
                   className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-              </figure>
+              </a>
               <div className="mt-6 flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
                 <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                   <Globe size={14} />
@@ -578,7 +580,7 @@ function NationalEntrepreneurSection() {
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <div className="mt-5 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -588,8 +590,17 @@ function NationalEntrepreneurSection() {
                     </span>
                   ))}
                 </div>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 self-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 lg:self-start"
+                >
+                  <ExternalLink size={16} />
+                  Visit {project.title}
+                </a>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </div>
@@ -807,7 +818,7 @@ function ProjectLink({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
+      className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
     >
       <Icon size={16} />
       {label}
