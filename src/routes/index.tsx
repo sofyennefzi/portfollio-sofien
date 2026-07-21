@@ -89,7 +89,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Full-Stack Developer | Angular, Spring Boot, Python & n8n Automation",
+          "Portfolio of Sofyen Nefzi, a Full-Stack Developer specializing in Angular, Spring Boot, Python, and n8n automation. Based in Tunis, Tunisia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Full-Stack Developer | Angular, Spring Boot, Python & n8n Automation",
+          "Portfolio of Sofyen Nefzi, a Full-Stack Developer specializing in Angular, Spring Boot, Python, and n8n automation. Based in Tunis, Tunisia.",
       },
     ],
   }),
