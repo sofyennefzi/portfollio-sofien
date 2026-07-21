@@ -561,60 +561,25 @@ function NationalEntrepreneurSection() {
             Two agency projects I'm especially proud of — from founding an AI automation studio to shipping a full digital agency experience.
           </p>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            {agencyProjects.map((p) => (
-              <a
-                key={p.title}
-                href={p.live}
-                target="_blank"
-                rel="noreferrer"
-                className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="relative aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div
-                    className={`pointer-events-none absolute inset-0 bg-gradient-to-t ${p.accent}`}
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-foreground">{p.title}</h3>
-                    <ExternalLink
-                      size={18}
-                      className="text-muted-foreground transition-colors group-hover:text-primary"
-                    />
-                  </div>
-                  <p className="mt-1 text-sm font-medium text-primary">{p.role}</p>
-                  <p className="mt-3 text-base leading-relaxed text-foreground/80">
-                    {p.tagline}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {p.description}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {p.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
-                    Visit site
-                    <ChevronRight
-                      size={16}
-                      className="transition-transform group-hover:translate-x-1"
-                    />
-                  </div>
-                </div>
-              </a>
-            ))}
+          <div
+            className="group/marquee relative mt-8 flex overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+          >
+            <div className="flex w-max animate-[marquee_35s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
+              {[
+                ...agencyProjects,
+                ...agencyProjects,
+                ...agencyProjects,
+                ...agencyProjects,
+              ].map((p, i) => (
+                <AgencyCard key={`${p.title}-${i}`} project={p} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
