@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "bf9dae5f-dfb9-451a-b4ec-c68cca72cb23",
-  "project_id": "6df2d773-e5b6-4b89-a90d-cfd71dcade76",
-  "url": "/__l5e/assets-v1/bf9dae5f-dfb9-451a-b4ec-c68cca72cb23/chat-db.png",
-  "r2_key": "a/v1/6df2d773-e5b6-4b89-a90d-cfd71dcade76/bf9dae5f-dfb9-451a-b4ec-c68cca72cb23/chat-db.png",
-  "original_filename": "chat-db.png",
-  "size": 24239,
   "content_type": "image/png",
-  "created_at": "2026-07-21T18:29:55Z"
+  "created_at": "2026-07-21T18:29:55Z",
+  "original_filename": "chat-db.png",
+  "project_id": "7bb60f8f-f3a6-4e07-9ea2-82f17baadc4b",
+  "r2_key": "a/v1/7bb60f8f-f3a6-4e07-9ea2-82f17baadc4b/bf9dae5f-dfb9-451a-b4ec-c68cca72cb23/chat-db.png",
+  "size": 24239,
+  "url": "/__l5e/assets-v1/bf9dae5f-dfb9-451a-b4ec-c68cca72cb23/chat-db.png",
+  "version": 1
 }
