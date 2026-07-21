@@ -550,19 +550,18 @@ function NationalEntrepreneurSection() {
           </div>
         </div>
 
-        <div id="agencies" className="mt-16">
-          <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            Agencies I've Built
-          </p>
-          <h2 className="mt-2 text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Featured Work
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-muted-foreground">
-            Two agency projects I'm especially proud of — from founding an AI automation studio to shipping a full digital agency experience.
-          </p>
+        <div className="mt-16">
+          <div className="flex items-center justify-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+              <Briefcase size={20} className="text-secondary-foreground" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">
+              Agencies I've Built
+            </h3>
+          </div>
 
           <div
-            className="group/marquee relative mt-8 flex overflow-hidden"
+            className="group/marquee relative mt-6 flex overflow-hidden"
             style={{
               maskImage:
                 "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
@@ -581,6 +580,10 @@ function NationalEntrepreneurSection() {
               ))}
             </div>
           </div>
+
+          <p className="mt-4 text-center text-xs text-muted-foreground">
+            Hover to pause · click any card to visit the live agency site
+          </p>
         </div>
       </div>
     </section>
