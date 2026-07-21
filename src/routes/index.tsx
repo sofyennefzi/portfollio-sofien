@@ -550,40 +550,47 @@ function NationalEntrepreneurSection() {
           </div>
         </div>
 
-        <div className="mt-16">
-          <div className="flex items-center justify-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-              <Briefcase size={20} className="text-secondary-foreground" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground">
-              Agencies I've Built
-            </h3>
-          </div>
-
-          <div
-            className="group/marquee relative mt-6 flex overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-            }}
-          >
-            <div className="flex w-max animate-[marquee_35s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
-              {[
-                ...agencyProjects,
-                ...agencyProjects,
-                ...agencyProjects,
-                ...agencyProjects,
-              ].map((p, i) => (
-                <AgencyCard key={`${p.title}-${i}`} project={p} />
-              ))}
-            </div>
-          </div>
-
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            Hover to pause · click any card to visit the live agency site
-          </p>
+        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+          {agencyProjects.map((project) => (
+            <a
+              key={project.title}
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+              <figure className="w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </figure>
+              <div className="mt-6 flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                  <Globe size={14} />
+                  {project.badge}
+                </div>
+                <h3 className="mt-4 text-2xl font-bold tracking-tight text-foreground">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  {project.description}
+                </p>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -698,47 +705,22 @@ function CertCard({ cert }: { cert: (typeof certifications)[number] }) {
   );
 }
 
-function AgencyCard({ project }: { project: (typeof agencyProjects)[number] }) {
-  return (
-    <a
-      href={project.live}
-      target="_blank"
-      rel="noreferrer"
-      className="group/card relative block w-64 shrink-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-    >
-      <div className="aspect-[4/3] overflow-hidden bg-muted">
-        <img
-          src={project.image}
-          alt={project.title}
-          loading="lazy"
-          className="h-full w-full object-cover object-top transition duration-500 group-hover/card:scale-105"
-        />
-      </div>
-      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-background/95 via-background/85 to-transparent p-3 transition-transform duration-300 group-hover/card:translate-y-0">
-        <p className="text-xs font-semibold text-foreground line-clamp-1">
-          {project.title}
-        </p>
-        <p className="mt-0.5 text-[10px] text-primary">{project.role}</p>
-        <p className="mt-0.5 text-[10px] text-muted-foreground line-clamp-1">
-          {project.tagline}
-        </p>
-      </figcaption>
-    </a>
-  );
-}
-
 const agencyProjects = [
   {
     title: "AI4Digital",
-    role: "Founder & Full-Stack Developer",
-    tagline: "AI-driven workflows, images & video for growing brands.",
+    badge: "Live Agency",
+    description:
+      "My own agency — we design and ship custom AI automations, workflows, image generation, ad copy and video so brands scale on autopilot. I built the platform end-to-end: brand, site, and delivery workflow.",
+    tags: ["AI Automation", "n8n", "Next.js", "Branding"],
     image: ai4digitalAsset.url,
     live: "https://ai4digital.live",
   },
   {
     title: "Brima Digital",
-    role: "Full-Stack Developer",
-    tagline: "Your partner in digital evolution — content & social storytelling.",
+    badge: "Live Agency",
+    description:
+      "Website for Brima Digital, a content creation and social media marketing agency. I designed and developed the full experience — narrative, motion, and creator/brand journeys — helping them showcase collaborations and tell brand stories.",
+    tags: ["React", "Motion", "Storytelling", "Marketing Site"],
     image: brimaDigitalAsset.url,
     live: "https://brimadigital.com",
   },
