@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 
 import cvAsset from "@/assets/sofien-nefzi-cv.pdf.asset.json";
+import aboutAsset from "@/assets/sofien-about.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
