@@ -42,6 +42,8 @@ import certSpringMvc from "@/assets/certs/image-18.png.asset.json";
 import certYanfaEnglish from "@/assets/certs/image-19.png.asset.json";
 import certEfsetB2 from "@/assets/certs/image-20.png.asset.json";
 import nationalEntrepreneur from "@/assets/certs/national-entrepreneur.jpg.asset.json";
+import ai4digitalAsset from "@/assets/agencies/ai4digital.png.asset.json";
+import brimaDigitalAsset from "@/assets/agencies/brimadigital.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
