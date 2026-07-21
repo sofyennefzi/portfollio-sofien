@@ -221,6 +221,78 @@ const projects: {
     tags: ["n8n", "AI Integration", "Web Scraping", "Google Sheets API", "Prompt Engineering"],
     links: {},
   },
+  {
+    title: "CNSS Data Management Platform",
+    description:
+      "Secure full-stack web application built during my internship at Caisse Nationale de Sécurité Sociale (Tunis, 2025) for internal data management and automation. Includes an API middleware that auto-extracts and populates databases, with JWT-secured access.",
+    image: "https://sofiennefzi.me/interface%20API.png",
+    tags: ["Spring Boot", "Angular", "REST APIs", "Spring Security", "JWT", "Bootstrap"],
+    links: {},
+  },
+  {
+    title: "CNSS Admin CRUD System",
+    description:
+      "Comprehensive admin dashboard for CNSS Tunisia with full CRUD, advanced filtering and sorting, bulk data import/export, and activity audit logs for user and data management.",
+    image: "https://sofiennefzi.me/Capture%20d%E2%80%99%C3%A9cran%202025-05-22%20232534.jpg",
+    tags: ["Spring Boot", "Angular", "TypeScript", "MySQL"],
+    links: {},
+  },
+  {
+    title: "ESEN Digital Library System",
+    description:
+      "Full-stack digital library platform for ESEN with dual-role authentication, complete book lifecycle management, an interactive discovery interface, automated loan tracking, and a responsive design across devices.",
+    image: "https://sofiennefzi.me/lib_esen/1.jpeg",
+    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+    links: {},
+  },
+  {
+    title: "E-Commerce Analytics Dashboard",
+    description:
+      "Full-stack e-commerce analytics platform (2024) with real-time sales monitoring, abandoned-cart analysis, CAC calculations, product performance analytics, ad-campaign ROI tracking, and customer segmentation.",
+    image: "https://sofiennefzi.me/main.jpg",
+    tags: ["Spring Boot", "Angular", "Oracle", "TypeScript", "HTML5", "CSS3"],
+    links: {},
+  },
+  {
+    title: "AI Agent Web Scraping",
+    description:
+      "Intelligent automation that scrapes business data from Google Maps, Yellow Pages, Apollo, Instagram, and TikTok through natural-language commands. The agent picks the right tool per query and delivers cleaned results into Google Sheets in real time.",
+    image: "https://sofiennefzi.me/n8n20%20(1).jpg",
+    tags: ["n8n", "OpenAI GPT-4", "Apify", "Google Sheets API", "JavaScript", "REST APIs"],
+    links: {},
+  },
+  {
+    title: "Python YouTube Downloader",
+    description:
+      "Python + Flask web app that downloads YouTube videos or extracts audio through a clean UI. Uses FFMPEG for high-quality media processing, dotenv for secure config, and an automated downloads-folder cleanup pipeline.",
+    image: "https://sofiennefzi.me/yt-img.jpg",
+    tags: ["Python", "Flask", "FFMPEG", "dotenv", "JavaScript", "REST APIs"],
+    links: {},
+  },
+  {
+    title: "Restaurant Analytics Chatbot",
+    description:
+      "Production-ready Flask app bringing natural-language analytics to restaurant operations. Ask about revenue, margins, menu performance or staffing — LangChain + GPT-4o-mini (Gemini fallback) turns questions into SQL and interactive Chart.js dashboards.",
+    image: "https://sofiennefzi.me/chat-interface.jpg",
+    tags: ["Python", "Flask", "LangChain", "GPT-4o-mini", "MySQL", "SQLAlchemy", "Chart.js"],
+    links: { live: "https://sofiennefzi.me/", github: "https://github.com/sofyennefzi/chatbot" },
+  },
+  {
+    title: "AI-Powered Job Application System",
+    description:
+      "End-to-end n8n workflow that finds roles, scores fit with GPT-4, writes tailored cover letters, and logs structured results into Google Sheets. Scales to 100+ targeted applications in minutes with company-aware context.",
+    image: "https://sofiennefzi.me/n8n%20jobs/workflow.jpg",
+    tags: ["n8n", "Apify", "OpenAI GPT-4", "Google Sheets", "HTTP APIs", "JSON"],
+    links: {},
+  },
+  {
+    title: "Clinic Management System",
+    description:
+      "Full-stack HealthTech app for dental and medical clinics: drag-and-drop scheduling with FullCalendar, patient management, automated payment tracking, an analytics dashboard, role-based auth with audit logging, and French localization.",
+    image: "https://sofiennefzi.me/care/dashbored.jpg",
+    tags: ["FastAPI", "MySQL", "Bootstrap 5", "Chart.js", "FullCalendar", "bcrypt"],
+    links: {},
+  },
 ];
 
 function Index() {
