@@ -222,6 +222,7 @@ function Index() {
       <main>
         <HeroSection />
         <AboutSection />
+        <NationalEntrepreneurSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
