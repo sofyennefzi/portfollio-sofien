@@ -44,6 +44,36 @@ import certEfsetB2 from "@/assets/certs/image-20.png.asset.json";
 import nationalEntrepreneur from "@/assets/certs/national-entrepreneur.jpg.asset.json";
 import ai4digitalAsset from "@/assets/agencies/ai4digital.png.asset.json";
 import brimaDigitalAsset from "@/assets/agencies/brimadigital.png.asset.json";
+import projWhatsappAi from "@/assets/projects/whatsapp-ai.png.asset.json";
+import projColdEmail from "@/assets/projects/cold-email.jpg.asset.json";
+import projGmailAiAgent from "@/assets/projects/gmail-ai-agent.jpg.asset.json";
+import projIndeed from "@/assets/projects/indeed-scraper.jpg.asset.json";
+import projLinkedin from "@/assets/projects/linkedin-scraper.jpg.asset.json";
+import projNoteApp from "@/assets/projects/note-app.png.asset.json";
+import projCoverLetter from "@/assets/projects/cover-letter.jpg.asset.json";
+import projGmapsLead from "@/assets/projects/gmaps-lead.jpg.asset.json";
+import projAstar from "@/assets/projects/astar.png.asset.json";
+import projTelegramAi from "@/assets/projects/telegram-ai.png.asset.json";
+import projAuraStore from "@/assets/projects/aura-store.png.asset.json";
+import projLifeManager from "@/assets/projects/life-manager.png.asset.json";
+import projChatDb from "@/assets/projects/chat-db.png.asset.json";
+import projGmailOpenai from "@/assets/projects/gmail-openai.png.asset.json";
+import projMobileLogin from "@/assets/projects/mobile-login.png.asset.json";
+import projEmailSupport from "@/assets/projects/email-support.png.asset.json";
+import projEcomArabic from "@/assets/projects/ecom-arabic.png.asset.json";
+import projFekraFlous from "@/assets/projects/fekra-flous.jpg.asset.json";
+import projFlower from "@/assets/projects/flower.png.asset.json";
+import projCommunityMgr from "@/assets/projects/community-mgr.png.asset.json";
+import projMonoprix from "@/assets/projects/monoprix.png.asset.json";
+import projNeutrogena from "@/assets/projects/neutrogena.png.asset.json";
+import projEthno from "@/assets/projects/ethno-freelance.png.asset.json";
+import projFirstAi from "@/assets/projects/first-ai-agent.png.asset.json";
+import projAuthUi from "@/assets/projects/auth-ui.png.asset.json";
+import projQrGen from "@/assets/projects/qr-gen.png.asset.json";
+import projEsenSite from "@/assets/projects/esen-site.png.asset.json";
+import projLibraryCrud from "@/assets/projects/library-crud.png.asset.json";
+import projOdoo from "@/assets/projects/odoo.png.asset.json";
+import projAirTravel from "@/assets/projects/air-travel.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -293,6 +323,246 @@ const projects: {
       "Full-stack HealthTech app for dental and medical clinics: drag-and-drop scheduling with FullCalendar, patient management, automated payment tracking, an analytics dashboard, role-based auth with audit logging, and French localization.",
     image: "https://sofiennefzi.me/care/dashbored.jpg",
     tags: ["FastAPI", "MySQL", "Bootstrap 5", "Chart.js", "FullCalendar", "bcrypt"],
+    links: {},
+  },
+  {
+    title: "WhatsApp AI Assistant with Calendar & CRM",
+    description:
+      "Personal WhatsApp AI agent built on n8n that books appointments, sends confirmations, and syncs with Google Calendar and a CRM. Understands Tunisian Arabic and French, and replies in the same language.",
+    image: projWhatsappAi.url,
+    tags: ["n8n", "OpenAI", "WhatsApp API", "Google Calendar", "CRM"],
+    links: {},
+  },
+  {
+    title: "AI Cold Email Agent",
+    description:
+      "Automated cold outreach pipeline that pulls leads from Google Sheets, drafts personalized emails with AI, sends them and logs delivery status and timestamps back into the sheet.",
+    image: projColdEmail.url,
+    tags: ["n8n", "OpenAI", "Gmail API", "Google Sheets"],
+    links: {},
+  },
+  {
+    title: "AI Agent for Gmail Triage",
+    description:
+      "AI mail assistant that reads incoming messages, classifies them into labels (Action Required, Follow-up, Job Update, Newsletter, System Notification…) and organizes the inbox automatically.",
+    image: projGmailAiAgent.url,
+    tags: ["n8n", "OpenAI", "Gmail API", "Classification"],
+    links: {},
+  },
+  {
+    title: "Indeed Jobs Scraper with AI Rating",
+    description:
+      "Automation that scrapes Indeed job postings via Apify, extracts salary, location and description, then rates each opportunity with AI to prioritize the best matches in a live Google Sheet.",
+    image: projIndeed.url,
+    tags: ["n8n", "Apify", "OpenAI", "Google Sheets"],
+    links: {},
+  },
+  {
+    title: "LinkedIn Jobs Scraper",
+    description:
+      "n8n workflow that scrapes LinkedIn job listings on schedule, cleans the data and pushes structured results into Sheets and a personal dashboard for follow-up.",
+    image: projLinkedin.url,
+    tags: ["n8n", "Web Scraping", "LinkedIn", "Google Sheets"],
+    links: {},
+  },
+  {
+    title: "NoteApp — Android",
+    description:
+      "Native Android note-taking app built with Java and Room DB. Features pinning, quick search, swipe-to-delete and a clean Material UI. Awarded 20/20 in the BIS 2025 mobile project.",
+    image: projNoteApp.url,
+    tags: ["Android", "Java", "Room DB", "SQLite"],
+    links: {},
+  },
+  {
+    title: "AI Cover Letter Generator",
+    description:
+      "n8n workflow triggered on schedule that pulls a job dataset from Apify, filters and sends each posting to OpenAI to generate a tailored cover letter, then logs everything into Google Sheets.",
+    image: projCoverLetter.url,
+    tags: ["n8n", "Apify", "OpenAI", "Google Sheets"],
+    links: {},
+  },
+  {
+    title: "Google Maps Lead Scraper to Sheets",
+    description:
+      "Lead generation automation that extracts business names, phones, emails, addresses and ratings from Google Maps and streams them into a structured Google Sheet ready for outreach.",
+    image: projGmapsLead.url,
+    tags: ["n8n", "Apify", "Google Maps", "Google Sheets"],
+    links: {},
+  },
+  {
+    title: "A* Algorithm Memory Optimization",
+    description:
+      "Python research project comparing data structures (2D matrix, dictionary, CSR sparse format) for the A* pathfinding algorithm. Benchmarked execution times on grids up to 100×100 to prove memory-locality gains.",
+    image: projAstar.url,
+    tags: ["Python", "Algorithms", "A*", "Performance"],
+    links: {},
+  },
+  {
+    title: "Telegram AI Booking Assistant",
+    description:
+      "Voice-and-text Telegram bot that transcribes audio messages, understands Arabic/French/English and books, updates or cancels Google Calendar meetings on behalf of the user.",
+    image: projTelegramAi.url,
+    tags: ["n8n", "Telegram", "OpenAI Whisper", "Google Calendar"],
+    links: {},
+  },
+  {
+    title: "VIVID AURA — Fashion Store",
+    description:
+      "E-commerce fashion brand website with product catalog, collections, cart and Instagram-integrated lookbook. Focus on premium typography and imagery.",
+    image: projAuraStore.url,
+    tags: ["React", "TypeScript", "Tailwind", "E-commerce"],
+    links: {},
+  },
+  {
+    title: "Personal Life Manager on Telegram",
+    description:
+      "n8n-based personal assistant that logs expenses, tasks, notes and reminders straight from Telegram messages, using AI to route each request to the right database.",
+    image: projLifeManager.url,
+    tags: ["n8n", "Telegram", "OpenAI", "Notion / Sheets"],
+    links: {},
+  },
+  {
+    title: "Chat with Your Database (AI)",
+    description:
+      "Natural-language interface that lets non-technical users query a SQL database in plain English. AI translates the question into SQL, runs it safely and returns formatted answers.",
+    image: projChatDb.url,
+    tags: ["n8n", "OpenAI", "SQL", "LangChain"],
+    links: {},
+  },
+  {
+    title: "Gmail Auto-Labeling with OpenAI",
+    description:
+      "Lightweight Gmail automation that reads new messages, asks an LLM to pick the right label, and either applies an existing label or creates a new one on the fly.",
+    image: projGmailOpenai.url,
+    tags: ["n8n", "OpenAI", "Gmail API"],
+    links: {},
+  },
+  {
+    title: "Mobile Auth Project",
+    description:
+      "Mobile project featuring a polished login and account flow, form validation and secure credential handling. Delivered as a coursework project with a focus on UX.",
+    image: projMobileLogin.url,
+    tags: ["Android", "Java", "UI/UX"],
+    links: {},
+  },
+  {
+    title: "AI Email Support Agent",
+    description:
+      "Customer-support AI agent combining Gmail triggers, Gemini and OpenAI models with simple memory. Reads support requests, drafts answers and logs each conversation into a Google Sheet.",
+    image: projEmailSupport.url,
+    tags: ["n8n", "Gemini", "OpenAI", "Gmail API"],
+    links: {},
+  },
+  {
+    title: "E-Commerce Website (Arabic)",
+    description:
+      "Arabic-first e-commerce storefront with product search, discount badges and category grid. Optimized for right-to-left layout and local delivery workflows.",
+    image: projEcomArabic.url,
+    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "RTL"],
+    links: {},
+  },
+  {
+    title: "Fekra w Flous — Fintech Dashboard",
+    description:
+      "Admin dashboard for a micro-financing platform: user statistics, available financing offers, activity charts and pending-approval queue with role-based access.",
+    image: projFekraFlous.url,
+    tags: ["Angular", "Spring Boot", "Chart.js", "MySQL"],
+    links: {},
+  },
+  {
+    title: "Flower Shop Website",
+    description:
+      "Elegant florist storefront with hero, product gallery, reviews and contact form. Focus on soft typography, generous whitespace and smooth scrolling animations.",
+    image: projFlower.url,
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    links: {},
+  },
+  {
+    title: "Community Manager — El Mouradi",
+    description:
+      "Community-management case study for hotel El Mouradi: search-engine and social-media audit, Facebook content analysis, and posting/engagement strategy recommendations.",
+    image: projCommunityMgr.url,
+    tags: ["Community Management", "Social Media", "Case Study"],
+    links: {},
+  },
+  {
+    title: "TikTok Influence Strategy — Monoprix",
+    description:
+      "Influencer-marketing strategy on TikTok for Monoprix's 93rd anniversary: audience targeting, creator tiers, content pillars and KPIs. Delivered with Tawa Digital.",
+    image: projMonoprix.url,
+    tags: ["Marketing", "TikTok", "Influence", "Strategy"],
+    links: {},
+  },
+  {
+    title: "Influence Strategy — Neutrogena",
+    description:
+      "Skincare influence-marketing strategy for Neutrogena: positioning as the healthy-skin expert, creator matrix, storytelling angles and campaign KPIs.",
+    image: projNeutrogena.url,
+    tags: ["Marketing", "Influence", "Strategy", "Skincare"],
+    links: {},
+  },
+  {
+    title: "Ethnographic Study — Freelance in Tunisia",
+    description:
+      "Light participant-observation study of the 428K-member Facebook group “Freelance in Tunisia”, mapping missions, advice patterns and community rituals of Tunisian freelancers.",
+    image: projEthno.url,
+    tags: ["Ethnography", "Research", "Community"],
+    links: {},
+  },
+  {
+    title: "My First AI Agent",
+    description:
+      "First hands-on AI agent built end-to-end in n8n: chat trigger, memory, custom tools and prompt engineering — the foundation for all my later automations.",
+    image: projFirstAi.url,
+    tags: ["n8n", "AI Agent", "OpenAI", "Prompt Engineering"],
+    links: {},
+  },
+  {
+    title: "Auth UI — Login & Registration",
+    description:
+      "Modern authentication interface with dual-panel login/register, animated transitions and clean form validation. Reusable UI kit for full-stack projects.",
+    image: projAuthUi.url,
+    tags: ["HTML5", "CSS3", "JavaScript", "UI/UX"],
+    links: {},
+  },
+  {
+    title: "QR Code Generator",
+    description:
+      "Web app that generates QR codes on the fly from any URL or text. Supports download, size options and quick regeneration.",
+    image: projQrGen.url,
+    tags: ["JavaScript", "HTML5", "CSS3", "QR"],
+    links: {},
+  },
+  {
+    title: "ESEN Institutional Website",
+    description:
+      "Institutional website concept for ESEN (École Supérieure d'Économie Numérique): programs, faculty, key figures and contact — highlighting the school's identity in digital economy.",
+    image: projEsenSite.url,
+    tags: ["React", "TypeScript", "Tailwind"],
+    links: {},
+  },
+  {
+    title: "Library CRUD",
+    description:
+      "Classic library management CRUD: books, authors, subscribers and reservations, with add/edit/delete flows and search — built as an academic full-stack project.",
+    image: projLibraryCrud.url,
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    links: {},
+  },
+  {
+    title: "Odoo — Custom Module",
+    description:
+      "Custom Odoo 18 module (`partner_extension`) extending the partner model with new fields, views and business logic. Packaged and installed on a local Odoo instance.",
+    image: projOdoo.url,
+    tags: ["Odoo 18", "Python", "XML", "ERP"],
+    links: {},
+  },
+  {
+    title: "Air Travel Website",
+    description:
+      "Simple travel-agency landing page with hero, destinations, about and booking sections. Focus on clean typography and responsive layout.",
+    image: projAirTravel.url,
+    tags: ["HTML5", "CSS3", "JavaScript"],
     links: {},
   },
 ];
