@@ -150,7 +150,13 @@ const certifications = [
 const certRow1 = certifications.slice(0, 10);
 const certRow2 = certifications.slice(10);
 
-const projects = [
+const projects: {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  links: { github?: string; live?: string };
+}[] = [
   {
     title: "ESEN Joker Club",
     description:
