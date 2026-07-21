@@ -26,6 +26,16 @@ import certGoogle from "@/assets/certs/image-3.png.asset.json";
 import certAzure from "@/assets/certs/image-4.png.asset.json";
 import certSpring from "@/assets/certs/image-5.png.asset.json";
 import certPython from "@/assets/certs/image-6.png.asset.json";
+import certGooglePyOs from "@/assets/certs/image-7.png.asset.json";
+import certIbmPyDs from "@/assets/certs/image-8.png.asset.json";
+import certJhuWeb from "@/assets/certs/image-9.png.asset.json";
+import certIimaLeadership from "@/assets/certs/image-10.png.asset.json";
+import certLinkedInPy from "@/assets/certs/image-11.png.asset.json";
+import certBoardAngular from "@/assets/certs/image-12.png.asset.json";
+import certSaylorEnglish from "@/assets/certs/image-13.png.asset.json";
+import certMetaSocial from "@/assets/certs/image-14.png.asset.json";
+import certMetaReact from "@/assets/certs/image-15.png.asset.json";
+import certIbmPyDs2 from "@/assets/certs/image-16.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -109,42 +119,22 @@ const skills = [
 ];
 
 const certifications = [
-  {
-    title: "Foundations of Cybersecurity",
-    issuer: "Google — Coursera",
-    date: "Sep 2023",
-    image: certGoogle.url,
-  },
-  {
-    title: "Introduction to Microsoft Azure Cloud Services",
-    issuer: "Microsoft — Coursera",
-    date: "Feb 2023",
-    image: certAzure.url,
-  },
-  {
-    title: "Spring Boot: Inversion of Control and Dependency Injection",
-    issuer: "Coursera Project Network",
-    date: "Aug 2024",
-    image: certSpring.url,
-  },
-  {
-    title: "Innovation & Entrepreneurship — From Design Thinking to Funding",
-    issuer: "EIT Digital — Coursera",
-    date: "Nov 2025",
-    image: certEit.url,
-  },
-  {
-    title: "Programming for Everybody (Getting Started with Python)",
-    issuer: "University of Michigan — Coursera",
-    date: "Jan 2023",
-    image: certPython.url,
-  },
-  {
-    title: "The Basics of Linux Command Line",
-    issuer: "Udemy",
-    date: "Dec 2022",
-    image: certLinux.url,
-  },
+  { title: "Foundations of Cybersecurity", issuer: "Google", date: "Sep 2023", image: certGoogle.url },
+  { title: "React Basics", issuer: "Meta", date: "Feb 2024", image: certMetaReact.url },
+  { title: "Frontend Development using Angular", issuer: "Board Infinity", date: "Nov 2024", image: certBoardAngular.url },
+  { title: "HTML, CSS & JavaScript for Web Developers", issuer: "Johns Hopkins University", date: "Feb 2023", image: certJhuWeb.url },
+  { title: "Spring Boot: IoC & Dependency Injection", issuer: "Coursera Project Network", date: "Aug 2024", image: certSpring.url },
+  { title: "Introduction to Microsoft Azure Cloud Services", issuer: "Microsoft", date: "Feb 2023", image: certAzure.url },
+  { title: "Python Project for Data Science", issuer: "IBM", date: "Jun 2023", image: certIbmPyDs.url },
+  { title: "Python Project for Data Science (Credly)", issuer: "IBM", date: "Jun 2023", image: certIbmPyDs2.url },
+  { title: "Using Python to Interact with the Operating System", issuer: "Google", date: "Jun 2024", image: certGooglePyOs.url },
+  { title: "Programming for Everybody (Python)", issuer: "University of Michigan", date: "Jan 2023", image: certPython.url },
+  { title: "Python for Non-Programmers", issuer: "LinkedIn Learning", date: "Aug 2023", image: certLinkedInPy.url },
+  { title: "The Basics of Linux Command Line", issuer: "Udemy", date: "Dec 2022", image: certLinux.url },
+  { title: "Innovation & Entrepreneurship", issuer: "EIT Digital", date: "Nov 2025", image: certEit.url },
+  { title: "Leadership Skills", issuer: "IIM Ahmedabad", date: "Oct 2023", image: certIimaLeadership.url },
+  { title: "Social Media Management", issuer: "Meta", date: "Aug 2023", image: certMetaSocial.url },
+  { title: "Elementary English as a Second Language", issuer: "Saylor Academy", date: "Dec 2022", image: certSaylorEnglish.url },
 ];
 
 const projects = [
@@ -465,40 +455,60 @@ function SkillsSection() {
           ))}
         </div>
 
-        <div className="mt-12">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-              <Shield size={20} className="text-secondary-foreground" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground">
-              Certifications
-            </h3>
-          </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((cert) => (
-              <div
-                key={cert.title}
-                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    loading="lazy"
-                    className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <div className="p-4">
-                  <h4 className="text-sm font-semibold text-foreground">
-                    {cert.title}
-                  </h4>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {cert.issuer} · {cert.date}
-                  </p>
-                </div>
+        <div className="mt-16">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+                <Shield size={20} className="text-secondary-foreground" />
               </div>
-            ))}
+              <h3 className="text-lg font-semibold text-foreground">
+                Certifications
+              </h3>
+            </div>
+            <span className="text-xs text-muted-foreground">
+              {certifications.length} credentials
+            </span>
           </div>
+
+          <div
+            className="group/marquee relative mt-6 overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+          >
+            <div className="flex w-max animate-[marquee_60s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
+              {[...certifications, ...certifications].map((cert, i) => (
+                <figure
+                  key={`${cert.title}-${i}`}
+                  className="group/card relative w-64 shrink-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-500 group-hover/card:scale-105"
+                    />
+                  </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-background/95 via-background/85 to-transparent p-3 transition-transform duration-300 group-hover/card:translate-y-0">
+                    <p className="text-xs font-semibold text-foreground line-clamp-2">
+                      {cert.title}
+                    </p>
+                    <p className="mt-0.5 text-[10px] text-muted-foreground">
+                      {cert.issuer} · {cert.date}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-4 text-center text-xs text-muted-foreground">
+            Hover to pause · continuous learning across web, cloud, data, and leadership
+          </p>
         </div>
       </div>
     </section>
