@@ -560,6 +560,29 @@ function SkillsSection() {
   );
 }
 
+function CertCard({ cert }: { cert: (typeof certifications)[number] }) {
+  return (
+    <figure className="group/card relative w-64 shrink-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+      <div className="aspect-[4/3] overflow-hidden bg-muted">
+        <img
+          src={cert.image}
+          alt={cert.title}
+          loading="lazy"
+          className="h-full w-full object-cover transition duration-500 group-hover/card:scale-105"
+        />
+      </div>
+      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-background/95 via-background/85 to-transparent p-3 transition-transform duration-300 group-hover/card:translate-y-0">
+        <p className="text-xs font-semibold text-foreground line-clamp-2">
+          {cert.title}
+        </p>
+        <p className="mt-0.5 text-[10px] text-muted-foreground">
+          {cert.issuer} · {cert.date}
+        </p>
+      </figcaption>
+    </figure>
+  );
+}
+
 function ProjectsSection() {
   return (
     <section id="projects" className="border-t border-border bg-card/30 py-20">
