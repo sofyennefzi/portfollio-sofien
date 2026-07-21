@@ -426,6 +426,52 @@ function InfoCard({
   );
 }
 
+function NationalEntrepreneurSection() {
+  return (
+    <section className="border-t border-border bg-card/30 py-16">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
+          <figure className="w-full max-w-sm shrink-0 overflow-hidden rounded-2xl border border-border bg-card shadow-lg transition-transform duration-500 hover:scale-[1.02]">
+            <img
+              src={nationalEntrepreneur.url}
+              alt="National Student Entrepreneur certificate — Sofyen Nefzi"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </figure>
+
+          <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+              <Award size={14} />
+              National Recognition
+            </div>
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              National Student Entrepreneur Status
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Awarded the national “Étudiant-Entrepreneur” status by the
+              University of Manouba and the Ministry of Higher Education. This
+              recognition supports my journey in building digital solutions,
+              combining academic rigor with real-world entrepreneurship.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <span className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
+                Université de la Manouba
+              </span>
+              <span className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
+                Level: Initiateur
+              </span>
+              <span className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
+                2025 – 2026
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SkillsSection() {
   return (
     <section id="skills" className="py-20">
