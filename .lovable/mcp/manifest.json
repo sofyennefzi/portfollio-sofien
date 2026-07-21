@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "sofyen-portfolio-mcp",
+      "version": "0.1.0",
+      "title": "Sofyen Nefzi Portfolio"
+    },
+    "tools": [
+      {
+        "name": "get_profile",
+        "title": "Get profile",
+        "description": "Returns Sofyen Nefzi's public portfolio profile: name, title, bio, contact links, experience, education, and national recognition status.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_projects",
+        "title": "List projects",
+        "description": "Lists Sofyen Nefzi's public portfolio projects. Optionally filter by category (Web Development, Mobile, Automation & AI, Strategy & Marketing, Tools & Scripts) or a free-text search.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "description": "Filter to one category. Omit to return all projects.",
+              "type": "string",
+              "enum": [
+                "Web Development",
+                "Mobile",
+                "Automation & AI",
+                "Strategy & Marketing",
+                "Tools & Scripts"
+              ]
+            },
+            "search": {
+              "description": "Case-insensitive substring match against title, summary, or tags.",
+              "type": "string"
+            },
+            "limit": {
+              "description": "Maximum number of projects to return.",
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_certifications",
+        "title": "List certifications",
+        "description": "Lists Sofyen Nefzi's certifications and credentials shown on the portfolio.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_contact",
+        "title": "Get contact info",
+        "description": "Returns Sofyen Nefzi's public contact channels and a link to download his CV.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
