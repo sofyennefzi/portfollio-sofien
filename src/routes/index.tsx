@@ -667,9 +667,9 @@ function HeroSection() {
             Sofyen Nefzi
           </h1>
           <p className="mt-3 text-lg font-medium text-muted-foreground sm:text-xl">
-            Full-Stack Developer | Angular, Spring Boot,{" "}
+            E-Business Master's Student | Software Engineer |{" "}
             <br className="hidden sm:block" />
-            Python & n8n Automation
+            Digital & Social Media Marketing | n8n Expert
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
             <a
