@@ -455,40 +455,60 @@ function SkillsSection() {
           ))}
         </div>
 
-        <div className="mt-12">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-              <Shield size={20} className="text-secondary-foreground" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground">
-              Certifications
-            </h3>
-          </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((cert) => (
-              <div
-                key={cert.title}
-                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    loading="lazy"
-                    className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <div className="p-4">
-                  <h4 className="text-sm font-semibold text-foreground">
-                    {cert.title}
-                  </h4>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {cert.issuer} · {cert.date}
-                  </p>
-                </div>
+        <div className="mt-16">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+                <Shield size={20} className="text-secondary-foreground" />
               </div>
-            ))}
+              <h3 className="text-lg font-semibold text-foreground">
+                Certifications
+              </h3>
+            </div>
+            <span className="text-xs text-muted-foreground">
+              {certifications.length} credentials
+            </span>
           </div>
+
+          <div
+            className="group/marquee relative mt-6 overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+          >
+            <div className="flex w-max animate-[marquee_60s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
+              {[...certifications, ...certifications].map((cert, i) => (
+                <figure
+                  key={`${cert.title}-${i}`}
+                  className="group/card relative w-64 shrink-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-500 group-hover/card:scale-105"
+                    />
+                  </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-background/95 via-background/85 to-transparent p-3 transition-transform duration-300 group-hover/card:translate-y-0">
+                    <p className="text-xs font-semibold text-foreground line-clamp-2">
+                      {cert.title}
+                    </p>
+                    <p className="mt-0.5 text-[10px] text-muted-foreground">
+                      {cert.issuer} · {cert.date}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-4 text-center text-xs text-muted-foreground">
+            Hover to pause · continuous learning across web, cloud, data, and leadership
+          </p>
         </div>
       </div>
     </section>
