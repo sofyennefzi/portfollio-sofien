@@ -550,40 +550,47 @@ function NationalEntrepreneurSection() {
           </div>
         </div>
 
-        <div className="mt-16">
-          <div className="flex items-center justify-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-              <Briefcase size={20} className="text-secondary-foreground" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground">
-              Agencies I've Built
-            </h3>
-          </div>
-
-          <div
-            className="group/marquee relative mt-6 flex overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-            }}
-          >
-            <div className="flex w-max animate-[marquee_35s_linear_infinite] gap-4 group-hover/marquee:[animation-play-state:paused]">
-              {[
-                ...agencyProjects,
-                ...agencyProjects,
-                ...agencyProjects,
-                ...agencyProjects,
-              ].map((p, i) => (
-                <AgencyCard key={`${p.title}-${i}`} project={p} />
-              ))}
-            </div>
-          </div>
-
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            Hover to pause · click any card to visit the live agency site
-          </p>
+        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+          {agencyProjects.map((project) => (
+            <a
+              key={project.title}
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+              <figure className="w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </figure>
+              <div className="mt-6 flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                  <Globe size={14} />
+                  {project.badge}
+                </div>
+                <h3 className="mt-4 text-2xl font-bold tracking-tight text-foreground">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  {project.description}
+                </p>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
