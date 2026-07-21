@@ -20,6 +20,12 @@ import {
 
 import cvAsset from "@/assets/sofien-nefzi-cv.pdf.asset.json";
 import aboutAsset from "@/assets/sofien-about.jpg.asset.json";
+import certLinux from "@/assets/certs/image.png.asset.json";
+import certEit from "@/assets/certs/image-2.png.asset.json";
+import certGoogle from "@/assets/certs/image-3.png.asset.json";
+import certAzure from "@/assets/certs/image-4.png.asset.json";
+import certSpring from "@/assets/certs/image-5.png.asset.json";
+import certPython from "@/assets/certs/image-6.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,10 +109,42 @@ const skills = [
 ];
 
 const certifications = [
-  "Google Cybersecurity Professional Certificate",
-  "Microsoft Azure Cloud Services",
-  "Spring Boot (Coursera): IoC, DI, MVC & REST",
-  "English B2 — EF SET",
+  {
+    title: "Foundations of Cybersecurity",
+    issuer: "Google — Coursera",
+    date: "Sep 2023",
+    image: certGoogle.url,
+  },
+  {
+    title: "Introduction to Microsoft Azure Cloud Services",
+    issuer: "Microsoft — Coursera",
+    date: "Feb 2023",
+    image: certAzure.url,
+  },
+  {
+    title: "Spring Boot: Inversion of Control and Dependency Injection",
+    issuer: "Coursera Project Network",
+    date: "Aug 2024",
+    image: certSpring.url,
+  },
+  {
+    title: "Innovation & Entrepreneurship — From Design Thinking to Funding",
+    issuer: "EIT Digital — Coursera",
+    date: "Nov 2025",
+    image: certEit.url,
+  },
+  {
+    title: "Programming for Everybody (Getting Started with Python)",
+    issuer: "University of Michigan — Coursera",
+    date: "Jan 2023",
+    image: certPython.url,
+  },
+  {
+    title: "The Basics of Linux Command Line",
+    issuer: "Udemy",
+    date: "Dec 2022",
+    image: certLinux.url,
+  },
 ];
 
 const projects = [
@@ -427,7 +465,7 @@ function SkillsSection() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+        <div className="mt-12">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
               <Shield size={20} className="text-secondary-foreground" />
@@ -436,15 +474,29 @@ function SkillsSection() {
               Certifications
             </h3>
           </div>
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((cert) => (
-              <span
-                key={cert}
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground"
+              <div
+                key={cert.title}
+                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md"
               >
-                <Layers size={14} />
-                {cert}
-              </span>
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    loading="lazy"
+                    className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="text-sm font-semibold text-foreground">
+                    {cert.title}
+                  </h4>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {cert.issuer} · {cert.date}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
