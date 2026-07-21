@@ -695,28 +695,49 @@ function CertCard({ cert }: { cert: (typeof certifications)[number] }) {
   );
 }
 
+function AgencyCard({ project }: { project: (typeof agencyProjects)[number] }) {
+  return (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noreferrer"
+      className="group/card relative block w-64 shrink-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+      <div className="aspect-[4/3] overflow-hidden bg-muted">
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          className="h-full w-full object-cover object-top transition duration-500 group-hover/card:scale-105"
+        />
+      </div>
+      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-background/95 via-background/85 to-transparent p-3 transition-transform duration-300 group-hover/card:translate-y-0">
+        <p className="text-xs font-semibold text-foreground line-clamp-1">
+          {project.title}
+        </p>
+        <p className="mt-0.5 text-[10px] text-primary">{project.role}</p>
+        <p className="mt-0.5 text-[10px] text-muted-foreground line-clamp-1">
+          {project.tagline}
+        </p>
+      </figcaption>
+    </a>
+  );
+}
+
 const agencyProjects = [
   {
     title: "AI4Digital",
     role: "Founder & Full-Stack Developer",
     tagline: "AI-driven workflows, images & video for growing brands.",
-    description:
-      "My own agency — we design and ship custom AI automations, workflows, image generation, ad copy and video so brands scale on autopilot. I built the platform end-to-end: brand, site, and delivery workflow.",
-    tags: ["AI Automation", "n8n", "Next.js", "Branding"],
     image: ai4digitalAsset.url,
     live: "https://ai4digital.live",
-    accent: "from-orange-500/20 to-orange-500/0",
   },
   {
     title: "Brima Digital",
     role: "Full-Stack Developer",
     tagline: "Your partner in digital evolution — content & social storytelling.",
-    description:
-      "Website for Brima Digital, a content creation and social media marketing agency. I designed and developed the full experience — narrative, motion, and creator/brand journeys — helping them showcase collaborations and tell brand stories.",
-    tags: ["React", "Motion", "Storytelling", "Marketing Site"],
     image: brimaDigitalAsset.url,
     live: "https://brimadigital.com",
-    accent: "from-cyan-500/20 to-cyan-500/0",
   },
 ];
 
