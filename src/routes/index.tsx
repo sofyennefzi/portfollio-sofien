@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
 });
 
 const profilePicture = "https://sofiennefzi.me/profile_picture.jpeg";
-const aboutPicture = "https://sofiennefzi.me/pp3.png";
+const aboutPicture = aboutAsset.url;
 
 const navLinks = [
   { label: "About", href: "#about" },
