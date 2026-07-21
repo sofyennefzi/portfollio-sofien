@@ -147,6 +147,9 @@ const certifications = [
   { title: "Elementary English as a Second Language", issuer: "Saylor Academy", date: "Dec 2022", image: certSaylorEnglish.url },
 ];
 
+const certRow1 = certifications.slice(0, 10);
+const certRow2 = certifications.slice(10);
+
 const projects = [
   {
     title: "CNSS Data Management Platform",
