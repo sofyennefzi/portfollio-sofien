@@ -573,13 +573,28 @@ function Index() {
       <Navigation />
       <main>
         <HeroSection />
+        <SectionOrnament />
         <AboutSection />
+        <SectionOrnament />
         <NationalEntrepreneurSection />
+        <SectionOrnament />
         <SkillsSection />
+        <SectionOrnament />
         <ProjectsSection />
+        <SectionOrnament />
         <ContactSection />
       </main>
       <Footer />
+    </div>
+  );
+}
+
+function SectionOrnament() {
+  return (
+    <div className="mx-auto max-w-5xl px-6" aria-hidden="true">
+      <div className="section-ornament">
+        <span />
+      </div>
     </div>
   );
 }
@@ -620,54 +635,77 @@ function HeroSection() {
   return (
     <section
       id="profile"
-      className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 py-20 md:flex-row md:items-center md:py-28"
+      className="relative overflow-hidden"
     >
-      <div className="relative aspect-square w-48 shrink-0 overflow-hidden rounded-full border-4 border-card bg-muted shadow-xl md:w-64">
-        <img
-          src={profilePicture}
-          alt="Sofyen Nefzi profile"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="text-center md:text-left">
-        <p className="text-base font-medium text-muted-foreground">
-          Hello, I'm
-        </p>
-        <h1 className="mt-1 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          Sofyen Nefzi
-        </h1>
-        <p className="mt-3 text-lg font-medium text-muted-foreground sm:text-xl">
-          Full-Stack Developer | Angular, Spring Boot,{" "}
-          <br className="hidden sm:block" />
-          Python & n8n Automation
-        </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-          <a
-            href={cvAsset.url}
-            download
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-card-foreground transition-all hover:bg-accent hover:shadow-sm"
-          >
-            <Download size={18} />
-            Download CV
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-sm"
-          >
-            Contact Info
-          </a>
+      <div
+        aria-hidden="true"
+        className="hero-blob left-[-6rem] top-[-4rem] h-72 w-72 animate-[float-slow_14s_ease-in-out_infinite]"
+        style={{ background: "oklch(0.75 0.14 60)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="hero-blob right-[-8rem] top-24 h-96 w-96 animate-[float-slower_18s_ease-in-out_infinite]"
+        style={{ background: "oklch(0.72 0.12 30)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="hero-blob left-1/3 bottom-[-6rem] h-72 w-72 animate-[float-slow_20s_ease-in-out_infinite]"
+        style={{ background: "oklch(0.78 0.08 90)", opacity: 0.35 }}
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 py-20 md:flex-row md:items-center md:py-28">
+        <div className="relative aspect-square w-48 shrink-0 overflow-hidden rounded-full border-4 border-card bg-muted shadow-xl md:w-64">
+          <div
+            aria-hidden="true"
+            className="absolute -inset-2 rounded-full opacity-70 blur-2xl"
+            style={{ background: "conic-gradient(from 0deg, oklch(0.75 0.14 60), oklch(0.72 0.12 30), oklch(0.78 0.08 90), oklch(0.75 0.14 60))" }}
+          />
+          <img
+            src={profilePicture}
+            alt="Sofyen Nefzi profile"
+            className="relative h-full w-full object-cover"
+          />
         </div>
-        <div className="mt-6 flex items-center justify-center gap-4 md:justify-start">
-          <SocialLink
-            href="https://www.linkedin.com/in/sofien-nefzi-223651267/"
-            icon={Linkedin}
-            label="LinkedIn"
-          />
-          <SocialLink
-            href="https://github.com/sofyennefzi"
-            icon={Github}
-            label="GitHub"
-          />
+        <div className="text-center md:text-left">
+          <p className="text-base font-medium text-muted-foreground">
+            Hello, I'm
+          </p>
+          <h1 className="mt-1 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl gradient-text">
+            Sofyen Nefzi
+          </h1>
+          <p className="mt-3 text-lg font-medium text-muted-foreground sm:text-xl">
+            Full-Stack Developer | Angular, Spring Boot,{" "}
+            <br className="hidden sm:block" />
+            Python & n8n Automation
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+            <a
+              href={cvAsset.url}
+              download
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-card-foreground transition-all hover:bg-accent hover:shadow-md hover:-translate-y-0.5"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-md hover:-translate-y-0.5"
+            >
+              Contact Info
+            </a>
+          </div>
+          <div className="mt-6 flex items-center justify-center gap-4 md:justify-start">
+            <SocialLink
+              href="https://www.linkedin.com/in/sofien-nefzi-223651267/"
+              icon={Linkedin}
+              label="LinkedIn"
+            />
+            <SocialLink
+              href="https://github.com/sofyennefzi"
+              icon={Github}
+              label="GitHub"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -700,7 +738,7 @@ function AboutSection() {
   return (
     <section id="about" className="border-t border-border bg-card/30 py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="eyebrow justify-center">
           Get To Know More
         </p>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -882,7 +920,7 @@ function SkillsSection() {
   return (
     <section id="skills" className="py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="eyebrow justify-center">
           Explore My
         </p>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -1012,7 +1050,7 @@ function ProjectsSection() {
   return (
     <section id="projects" className="border-t border-border bg-card/30 py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="eyebrow justify-center">
           Browse My Recent
         </p>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -1023,7 +1061,7 @@ function ProjectsSection() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md"
+              className="card-glow group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
             >
               <div className="aspect-video overflow-hidden bg-muted">
                 <img
