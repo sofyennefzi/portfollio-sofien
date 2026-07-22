@@ -104,8 +104,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-import heroAsset from "@/assets/sofien-hero.jpg.asset.json";
-const profilePicture = heroAsset.url;
+const profilePicture = "https://sofiennefzi.me/assets/profile_picture.jpeg";
 const aboutPicture = aboutAsset.url;
 
 const navLinks = [
@@ -1033,7 +1032,7 @@ const agencyProjects = [
     badge: "Live Agency",
     description:
       "Website for Brima Digital, a content creation and social media marketing agency. I designed and developed the full experience — narrative, motion, and creator/brand journeys — helping them showcase collaborations and tell brand stories.",
-    tags: ["React", "Motion", "Storytelling", "Marketing Site"],
+    tags: ["Python", "Angular", "Storytelling", "Marketing Site"],
     image: brimaDigitalAsset.url,
     live: "https://brimadigital.com",
   },
