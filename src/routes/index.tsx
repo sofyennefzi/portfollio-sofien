@@ -1106,80 +1106,82 @@ function ProjectsSection() {
       .filter((g) => g.items.length > 0);
   }, [categorized]);
 
-  return (
-    <section id="projects" className="border-t border-border bg-card/30 py-20">
-      <div className="mx-auto max-w-5xl px-6">
-        <p className="eyebrow justify-center">Browse My Recent</p>
-        <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Projects
-        </h2>
+  const [activeCat, setActiveCat] = useState<string>(groups[0]?.category ?? "");
 
-        <div className="mt-16 space-y-20">
+  const slug = (s: string) => s.toLowerCase().replace(/\s|&/g, "-");
+
+  return (
+    <section id="projects" className="relative border-t border-border bg-gradient-to-b from-background via-card/20 to-background py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="text-center">
+          <p className="eyebrow justify-center">Selected Work</p>
+          <h2 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <span className="gradient-text">Projects</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            A curated collection across web, mobile, automation and strategy — hover any card to explore.
+          </p>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+          {groups.map((g) => (
+            <a
+              key={g.category}
+              href={`#projects-${slug(g.category)}`}
+              onClick={() => setActiveCat(g.category)}
+              className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                activeCat === g.category
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border bg-card text-foreground hover:border-foreground/40"
+              }`}
+            >
+              {g.category}
+              <span className={`rounded-full px-1.5 text-[10px] font-bold ${
+                activeCat === g.category ? "bg-background/20 text-background" : "bg-secondary text-secondary-foreground"
+              }`}>
+                {g.items.length}
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-16 space-y-24">
           {groups.map((group, idx) => (
-            <div key={group.category} id={`projects-${group.category.toLowerCase().replace(/\s|&/g, "-")}`}>
-              <div className="mb-8 flex items-end justify-between gap-4 border-b border-border pb-4">
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <div key={group.category} id={`projects-${slug(group.category)}`} className="scroll-mt-24">
+              <div className="mb-10 flex items-center gap-6">
+                <span className="text-6xl font-black leading-none text-foreground/5 sm:text-8xl">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                     {group.category}
                   </h3>
+                  <div className="mt-2 h-px w-full bg-gradient-to-r from-foreground/30 via-border to-transparent" />
                 </div>
-                <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground">
-                  {group.items.length} project{group.items.length > 1 ? "s" : ""}
+                <span className="hidden text-sm font-medium text-muted-foreground sm:block">
+                  {group.items.length.toString().padStart(2, "0")} projects
                 </span>
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {group.items.map((project) => (
-                  <article
-                    key={project.title}
-                    className="card-glow group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
-                  >
-                    <div className="relative aspect-video overflow-hidden bg-muted">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col p-5">
-                      <h4 className="text-lg font-semibold text-foreground">
-                        {project.title}
-                      </h4>
-                      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                        {project.description}
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="mt-5 flex gap-3">
-                        {project.links.github && (
-                          <ProjectLink
-                            href={project.links.github}
-                            icon={Github}
-                            label="GitHub"
-                          />
-                        )}
-                        {project.links.live && (
-                          <ProjectLink
-                            href={project.links.live}
-                            icon={ExternalLink}
-                            label="Live Demo"
-                          />
-                        )}
-                      </div>
-                    </div>
-                  </article>
-                ))}
+              <div className="grid auto-rows-[minmax(240px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {group.items.map((project, i) => {
+                  const isFeatured = i === 0;
+                  const isWide = i > 0 && i % 5 === 3;
+                  return (
+                    <ProjectCard
+                      key={project.title}
+                      project={{ ...project, category: group.category }}
+                      className={
+                        isFeatured
+                          ? "sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2"
+                          : isWide
+                            ? "sm:col-span-2"
+                            : ""
+                      }
+                      featured={isFeatured}
+                    />
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -1189,26 +1191,103 @@ function ProjectsSection() {
   );
 }
 
-
-function ProjectLink({
-  href,
-  icon: Icon,
-  label,
+function ProjectCard({
+  project,
+  className = "",
+  featured = false,
 }: {
-  href: string;
-  icon: React.ElementType;
-  label: string;
+  project: (typeof projects)[number] & { category?: string };
+  className?: string;
+  featured?: boolean;
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
+    <article
+      className={`group relative flex min-h-[240px] flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${className}`}
     >
-      <Icon size={16} />
-      {label}
-    </a>
+      <div className="absolute inset-0">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
+      </div>
+
+      {project.category && (
+        <div className="relative z-10 flex items-start justify-between p-5">
+          <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+            {project.category}
+          </span>
+          {featured && (
+            <span className="rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black">
+              Featured
+            </span>
+          )}
+        </div>
+      )}
+
+      <div className="relative z-10 mt-auto flex flex-col gap-3 p-5 text-white">
+        <h4 className={`font-bold leading-tight ${featured ? "text-2xl sm:text-3xl" : "text-lg"}`}>
+          {project.title}
+        </h4>
+
+        <p
+          className={`text-sm leading-relaxed text-white/85 transition-all duration-500 ${
+            featured
+              ? "line-clamp-3"
+              : "max-h-0 translate-y-2 overflow-hidden opacity-0 group-hover:max-h-32 group-hover:translate-y-0 group-hover:opacity-100"
+          }`}
+        >
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap items-center gap-1.5">
+          {project.tags.slice(0, featured ? 6 : 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-md"
+            >
+              {tag}
+            </span>
+          ))}
+          {project.tags.length > (featured ? 6 : 3) && (
+            <span className="text-[10px] text-white/60">
+              +{project.tags.length - (featured ? 6 : 3)}
+            </span>
+          )}
+        </div>
+
+        {(project.links.github || project.links.live) && (
+          <div className="mt-1 flex gap-2">
+            {project.links.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md transition-all hover:bg-white hover:text-black"
+              >
+                <Github size={13} />
+                Code
+              </a>
+            )}
+            {project.links.live && (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-black transition-all hover:bg-white/90"
+              >
+                <ExternalLink size={13} />
+                Visit
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div className="pointer-events-none absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-12 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:h-32 group-hover:w-32" />
+    </article>
   );
 }
 
