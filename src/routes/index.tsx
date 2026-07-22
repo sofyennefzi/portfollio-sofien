@@ -104,7 +104,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const profilePicture = "https://sofiennefzi.me/profile_picture.jpeg";
+import heroAsset from "@/assets/sofien-hero.jpg.asset.json";
+const profilePicture = heroAsset.url;
 const aboutPicture = aboutAsset.url;
 
 const navLinks = [
