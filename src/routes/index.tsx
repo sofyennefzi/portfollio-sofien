@@ -104,7 +104,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const profilePicture = "https://sofiennefzi.me/assets/profile_picture.jpeg";
+const profilePicture = "https://sofiennefzi.me/profile_picture.jpeg";
 const aboutPicture = aboutAsset.url;
 
 const navLinks = [
