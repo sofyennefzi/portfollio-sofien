@@ -23,6 +23,15 @@ import {
 import cvAsset from "@/assets/sofien-nefzi-cv.pdf.asset.json";
 import aboutAsset from "@/assets/sofien-about.jpg.asset.json";
 import heroAsset from "@/assets/sofien-hero.jpg.asset.json";
+import projJoker from "@/assets/projects/joker.jpg.asset.json";
+import projHotel from "@/assets/projects/hotel.jpg.asset.json";
+import projResto from "@/assets/projects/resto.jpg.asset.json";
+import projTaskflow from "@/assets/projects/taskflow.jpg.asset.json";
+import projCnssApi from "@/assets/projects/interface_API.png.asset.json";
+import projCnssCrud from "@/assets/projects/cnss-crud.jpg.asset.json";
+import projLibEsen from "@/assets/projects/1.jpeg.asset.json";
+import projEcomDash from "@/assets/projects/main.jpg.asset.json";
+import projClinic from "@/assets/projects/paiments.jpg.asset.json";
 import certLinux from "@/assets/certs/image.png.asset.json";
 import certEit from "@/assets/certs/image-2.png.asset.json";
 import certGoogle from "@/assets/certs/image-3.png.asset.json";
@@ -195,7 +204,7 @@ const projects: {
     title: "ESEN Joker Club",
     description:
       "Designed and developed the official website for our university's Joker Club. Features include event calendars, member profiles, and photo galleries. Implemented responsive design for all devices and optimized loading times.",
-    image: "https://sofiennefzi.me/joker.jpg",
+    image: projJoker.url,
     tags: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
     links: {},
   },
@@ -203,7 +212,7 @@ const projects: {
     title: "Hotel Booking",
     description:
       "A comprehensive hotel management system with room booking functionality, admin dashboard, and payment integration. Developed as my final year project with secure user authentication and database management.",
-    image: "https://sofiennefzi.me/hotel.jpg",
+    image: projHotel.url,
     tags: ["PHP", "MySQL", "JavaScript", "jQuery"],
     links: {},
   },
@@ -211,7 +220,7 @@ const projects: {
     title: "Gourmet Restaurant",
     description:
       "Modern restaurant website with online reservation system, interactive menu, and food gallery. Focused on creating an elegant UI with smooth animations and intuitive navigation for the best user experience.",
-    image: "https://sofiennefzi.me/resto.jpg",
+    image: projResto.url,
     tags: ["React", "CSS Modules", "Node.js"],
     links: {},
   },
@@ -243,7 +252,7 @@ const projects: {
     title: "Task Flow",
     description:
       "Full-stack productivity application with user authentication, project management, and task tracking. Features a responsive dashboard with productivity insights, priority-based task organization, and intuitive project categorization for seamless workflow management.",
-    image: "https://sofiennefzi.me/task.jpg",
+    image: projTaskflow.url,
     tags: ["Spring Boot", "Angular", "MySQL", "JWT", "TypeScript"],
     links: {},
   },
@@ -259,7 +268,7 @@ const projects: {
     title: "CNSS Data Management Platform",
     description:
       "Secure full-stack web application built during my internship at Caisse Nationale de Sécurité Sociale (Tunis, 2025) for internal data management and automation. Includes an API middleware that auto-extracts and populates databases, with JWT-secured access.",
-    image: "https://sofiennefzi.me/interface%20API.png",
+    image: projCnssApi.url,
     tags: ["Spring Boot", "Angular", "REST APIs", "Spring Security", "JWT", "Bootstrap"],
     links: {},
   },
@@ -267,7 +276,7 @@ const projects: {
     title: "CNSS Admin CRUD System",
     description:
       "Comprehensive admin dashboard for CNSS Tunisia with full CRUD, advanced filtering and sorting, bulk data import/export, and activity audit logs for user and data management.",
-    image: "https://sofiennefzi.me/Capture%20d%E2%80%99%C3%A9cran%202025-05-22%20232534.jpg",
+    image: projCnssCrud.url,
     tags: ["Spring Boot", "Angular", "TypeScript", "MySQL"],
     links: {},
   },
@@ -275,7 +284,7 @@ const projects: {
     title: "ESEN Digital Library System",
     description:
       "Full-stack digital library platform for ESEN with dual-role authentication, complete book lifecycle management, an interactive discovery interface, automated loan tracking, and a responsive design across devices.",
-    image: "https://sofiennefzi.me/lib_esen/1.jpeg",
+    image: projLibEsen.url,
     tags: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
     links: {},
   },
@@ -283,7 +292,7 @@ const projects: {
     title: "E-Commerce Analytics Dashboard",
     description:
       "Full-stack e-commerce analytics platform (2024) with real-time sales monitoring, abandoned-cart analysis, CAC calculations, product performance analytics, ad-campaign ROI tracking, and customer segmentation.",
-    image: "https://sofiennefzi.me/main.jpg",
+    image: projEcomDash.url,
     tags: ["Spring Boot", "Angular", "Oracle", "TypeScript", "HTML5", "CSS3"],
     links: {},
   },
@@ -323,7 +332,7 @@ const projects: {
     title: "Clinic Management System",
     description:
       "Full-stack HealthTech app for dental and medical clinics: drag-and-drop scheduling with FullCalendar, patient management, automated payment tracking, an analytics dashboard, role-based auth with audit logging, and French localization.",
-    image: "https://sofiennefzi.me/care/dashbored.jpg",
+    image: projClinic.url,
     tags: ["FastAPI", "MySQL", "Bootstrap 5", "Chart.js", "FullCalendar", "bcrypt"],
     links: {},
   },
