@@ -22,6 +22,7 @@ import {
 
 import cvAsset from "@/assets/sofien-nefzi-cv.pdf.asset.json";
 import aboutAsset from "@/assets/sofien-about.jpg.asset.json";
+import heroAsset from "@/assets/sofien-hero.jpg.asset.json";
 import certLinux from "@/assets/certs/image.png.asset.json";
 import certEit from "@/assets/certs/image-2.png.asset.json";
 import certGoogle from "@/assets/certs/image-3.png.asset.json";
@@ -104,7 +105,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const profilePicture = "https://sofiennefzi.me/profile_picture.jpeg";
+const profilePicture = heroAsset.url;
 const aboutPicture = aboutAsset.url;
 
 const navLinks = [
