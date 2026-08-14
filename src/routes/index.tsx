@@ -85,6 +85,14 @@ import projEsenSite from "@/assets/projects/esen-site.png.asset.json";
 import projLibraryCrud from "@/assets/projects/library-crud.png.asset.json";
 import projOdoo from "@/assets/projects/odoo.png.asset.json";
 import projAirTravel from "@/assets/projects/air-travel.png.asset.json";
+import projXo from "@/assets/projects/xo.jpg.asset.json";
+import projN8nJobs from "@/assets/projects/n8n-jobs.jpg.asset.json";
+import projMapsScraping from "@/assets/projects/maps-scraping.png.asset.json";
+import projYtWeb from "@/assets/projects/yt-downloader-web.jpg.asset.json";
+import projRestoChatbot from "@/assets/projects/resto-chatbot.png.asset.json";
+import projCoverLetterWf from "@/assets/projects/cover-letter-workflow.png.asset.json";
+import projPingPong from "@/assets/projects/ping-pong.jpg.asset.json";
+import projYtTerminal from "@/assets/projects/yt-terminal.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -228,7 +236,7 @@ const projects: {
     title: "YouTube Downloader",
     description:
       "Desktop application that downloads YouTube videos in multiple formats and resolutions. Includes progress tracking, playlist support, and quality selection options.",
-    image: "https://sofiennefzi.me/yt.jpg",
+    image: projYtTerminal.url,
     tags: ["Python", "Tkinter", "Pytube"],
     links: {},
   },
@@ -236,7 +244,7 @@ const projects: {
     title: "Ping Pong",
     description:
       "A retro-style ping pong game with score tracking, difficulty levels, and multiplayer support. Built to understand game physics and real-time user input handling.",
-    image: "https://sofiennefzi.me/ping%20pong.jpg",
+    image: projPingPong.url,
     tags: ["Python", "Turtle", "Game Dev"],
     links: {},
   },
@@ -244,7 +252,7 @@ const projects: {
     title: "Tic Tac Toe",
     description:
       "Classic Tic Tac Toe with adjustable AI difficulty. Features include score history, player vs player mode, and responsive design that works on both desktop and mobile devices.",
-    image: "https://sofiennefzi.me/XO.jpg",
+    image: projXo.url,
     tags: ["JavaScript", "Minimax Algorithm", "Responsive Design"],
     links: {},
   },
@@ -260,7 +268,7 @@ const projects: {
     title: "Job Search Automator",
     description:
       "Intelligent automation system that streamlines job hunting by scraping relevant positions, analyzing job-description fit with AI, generating personalized cover letters, and organizing opportunities in a centralized dashboard.",
-    image: "https://sofiennefzi.me/n8n.jpg",
+    image: projN8nJobs.url,
     tags: ["n8n", "AI Integration", "Web Scraping", "Google Sheets API", "Prompt Engineering"],
     links: {},
   },
@@ -300,7 +308,7 @@ const projects: {
     title: "AI Agent Web Scraping",
     description:
       "Intelligent automation that scrapes business data from Google Maps, Yellow Pages, Apollo, Instagram, and TikTok through natural-language commands. The agent picks the right tool per query and delivers cleaned results into Google Sheets in real time.",
-    image: "https://sofiennefzi.me/n8n20%20(1).jpg",
+    image: projMapsScraping.url,
     tags: ["n8n", "OpenAI GPT-4", "Apify", "Google Sheets API", "JavaScript", "REST APIs"],
     links: {},
   },
@@ -308,7 +316,7 @@ const projects: {
     title: "Python YouTube Downloader",
     description:
       "Python + Flask web app that downloads YouTube videos or extracts audio through a clean UI. Uses FFMPEG for high-quality media processing, dotenv for secure config, and an automated downloads-folder cleanup pipeline.",
-    image: "https://sofiennefzi.me/yt-img.jpg",
+    image: projYtWeb.url,
     tags: ["Python", "Flask", "FFMPEG", "dotenv", "JavaScript", "REST APIs"],
     links: {},
   },
@@ -316,7 +324,7 @@ const projects: {
     title: "Restaurant Analytics Chatbot",
     description:
       "Production-ready Flask app bringing natural-language analytics to restaurant operations. Ask about revenue, margins, menu performance or staffing — LangChain + GPT-4o-mini (Gemini fallback) turns questions into SQL and interactive Chart.js dashboards.",
-    image: "https://sofiennefzi.me/chat-interface.jpg",
+    image: projRestoChatbot.url,
     tags: ["Python", "Flask", "LangChain", "GPT-4o-mini", "MySQL", "SQLAlchemy", "Chart.js"],
     links: { live: "https://sofiennefzi.me/", github: "https://github.com/sofyennefzi/chatbot" },
   },
@@ -324,7 +332,7 @@ const projects: {
     title: "AI-Powered Job Application System",
     description:
       "End-to-end n8n workflow that finds roles, scores fit with GPT-4, writes tailored cover letters, and logs structured results into Google Sheets. Scales to 100+ targeted applications in minutes with company-aware context.",
-    image: "https://sofiennefzi.me/n8n%20jobs/workflow.jpg",
+    image: projCoverLetterWf.url,
     tags: ["n8n", "Apify", "OpenAI GPT-4", "Google Sheets", "HTTP APIs", "JSON"],
     links: {},
   },
