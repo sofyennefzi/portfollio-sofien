@@ -651,17 +651,17 @@ function HeroSection() {
       <div
         aria-hidden="true"
         className="hero-blob left-[-6rem] top-[-4rem] h-72 w-72 animate-[float-slow_14s_ease-in-out_infinite]"
-        style={{ background: "oklch(0.75 0.14 60)" }}
+        style={{ background: "var(--hero-tint-1)" }}
       />
       <div
         aria-hidden="true"
         className="hero-blob right-[-8rem] top-24 h-96 w-96 animate-[float-slower_18s_ease-in-out_infinite]"
-        style={{ background: "oklch(0.72 0.12 30)" }}
+        style={{ background: "var(--hero-tint-2)" }}
       />
       <div
         aria-hidden="true"
         className="hero-blob left-1/3 bottom-[-6rem] h-72 w-72 animate-[float-slow_20s_ease-in-out_infinite]"
-        style={{ background: "oklch(0.78 0.08 90)", opacity: 0.35 }}
+        style={{ background: "var(--hero-tint-3)", opacity: 0.35 }}
       />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 py-20 md:flex-row md:items-center md:py-28">
@@ -669,8 +669,9 @@ function HeroSection() {
           <div
             aria-hidden="true"
             className="absolute -inset-2 rounded-full opacity-70 blur-2xl"
-            style={{ background: "conic-gradient(from 0deg, oklch(0.75 0.14 60), oklch(0.72 0.12 30), oklch(0.78 0.08 90), oklch(0.75 0.14 60))" }}
+            style={{ background: "conic-gradient(from 0deg, var(--hero-tint-1), var(--hero-tint-2), var(--hero-tint-3), var(--hero-tint-1))" }}
           />
+
           <img
             src={profilePicture}
             alt="Sofyen Nefzi profile"
