@@ -200,7 +200,7 @@
     120deg,
     var(--foreground) 0%,
     var(--foreground) 30%,
-    oklch(0.5 0.15 40) 50%,
+    var(--hero-accent) 50%,
     var(--foreground) 70%,
     var(--foreground) 100%
   );
