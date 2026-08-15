@@ -91,7 +91,14 @@
   --sidebar-accent-foreground: oklch(0.24 0.02 40);
   --sidebar-border: oklch(0.88 0.01 50);
   --sidebar-ring: oklch(0.55 0.02 50);
+
+  /* Hero tints sampled from the portfolio photo (cool slate / steel blue) */
+  --hero-tint-1: oklch(0.62 0.055 235);
+  --hero-tint-2: oklch(0.5 0.05 250);
+  --hero-tint-3: oklch(0.72 0.035 220);
+  --hero-accent: oklch(0.45 0.07 245);
 }
+
 
 .dark {
   --background: oklch(0.18 0.02 40);
